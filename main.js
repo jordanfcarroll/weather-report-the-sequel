@@ -46,13 +46,8 @@ ForecastView.prototype = Object.create(View.prototype);
 ForecastView.prototype.render = function (value) {
 	// console.log(value);
 	var description = this.data.weather[0].description;
-	var {
-		deg,
-		temp: {
-			min,
-			max
-		}
-	} = this.data;
+	var min = kToF(this.data.temp.min);
+	var max = kToF(this.data.temp.max);
 	var wind = {
 		speed: this.data.speed + "mph",
 		direction: windDirection(this.data.deg)
@@ -61,11 +56,11 @@ ForecastView.prototype.render = function (value) {
 	$(this.element).html(`
 		<div class="weather-item">
 			<ul class="block">
-				<li class="icon">${"INSERT ICON HERE"}</li>
+				<li class="icon"></li>
 				<li class="day">${"Monday"}</li>
 				<li class="desc">${description}</li>
-				<li class="hi">${min}</li>
-				<li class="lo">${max}</li>
+				<li class="hi">${max}</li>
+				<li class="lo">${min}</li>
 				<li class="wind">${wind.speed} ${wind.direction}</li>
 				<li class="expand"></li>
 			</ul>
@@ -99,7 +94,7 @@ function buildApp (results) {
 	$(document.body).append(report.element);
 }
 
-function KtoF (a) {
+function kToF (a) {
 	return Math.round((a*1.8) - 459.67);
 }
 
