@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "FontAwesome";
+	src: url(assets/font-awesome/fontawesome-webfont.ttf);
+}
+
+body {
+	font-family: Helvetica;
+	font-weight: bold;
+	color: #b7b7b7;
+}
+
+.container {
+	/*display: flex;*/
+}
+
+.weather-item {
+	/*font-family: Helvetica;
+	font-weight: bold;
+	color: #b7b7b7;*/
+	/*border-bottom: 1px solid #000;*/
+	/*width: 5em;
+	height: 2em;
+	margin: auto;*/
+	display: flex;
+}
+
+.block {
+	width: 95vw;
+	height: 8em;
+	margin: auto;
+	border-bottom: 1px solid #000;
+}
+
+li {
+	list-style: none;
+}
+
+.icon:before {
+	content: "\f0c2";
+	font-family: "FontAwesome";
+}
