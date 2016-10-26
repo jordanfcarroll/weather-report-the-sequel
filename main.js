@@ -19,8 +19,9 @@ ReportView.prototype.render = function () {
 	// MAKE UL
 
 	this.data.list.forEach(function (value) {
-		var forecastView = new ForecastView(value, "li")
+		var forecastView = new ForecastView(value, "div")
 		forecastView.render();
+
 
 		$(_this.element).append(forecastView.element);
 	})
@@ -45,9 +46,31 @@ ForecastView.prototype = Object.create(View.prototype);
 ForecastView.prototype.render = function (value) {
 	// console.log(value);
 	var description = this.data.weather[0].description;
-	// var high = this.temp.min;
-	// var high = this.temp.max;
-	// $(this.element).html(description + high);
+	var {
+		deg,
+		temp: {
+			min,
+			max
+		}
+	} = this.data;
+	var wind = {
+		speed: this.data.speed + "mph",
+		direction: windDirection(this.data.deg)
+	}
+
+	$(this.element).html(`
+		<div class="weather-item">
+			<ul class="block">
+				<li class="icon">${"INSERT ICON HERE"}</li>
+				<li class="day">${"Monday"}</li>
+				<li class="desc">${description}</li>
+				<li class="hi">${min}</li>
+				<li class="lo">${max}</li>
+				<li class="wind">${wind.speed} ${wind.direction}</li>
+				<li class="expand"></li>
+			</ul>
+		</div>
+		`);
 	this.bindEvents();
 }
 ForecastView.prototype.bindEvents = function () {
@@ -98,6 +121,11 @@ function renderClock () {
 
 	var builtClock = currentHours + ":" + currentMinutes + amString;
 	console.log(builtClock);
+}
+
+function windDirection(a) {
+	var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+	return directions[Math.round((a/45) % 8)];
 }
 
 init();
