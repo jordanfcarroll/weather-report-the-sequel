@@ -56,13 +56,17 @@ ForecastView.prototype.render = function (value) {
 	$(this.element).html(`
 		<div class="weather-item">
 			<ul class="block">
-				<li class="icon"></li>
-				<li class="day">${"Monday"}</li>
-				<li class="desc">${description}</li>
-				<li class="hi">${max}</li>
-				<li class="lo">${min}</li>
-				<li class="wind">${wind.speed} ${wind.direction}</li>
-				<li class="expand"></li>
+				<div class="icon-block">
+					<li class="icon"></li>
+					<li class="day">${"Monday"}</li>
+					<button class="expand">+<button>
+				</div>
+				<div class="info-block">
+					<li class="desc">${description}</li>
+					<li class="hi">${max}</li>
+					<li class="lo">${min}</li>
+					<li class="wind">${wind.speed} ${wind.direction}</li>
+				</div>
 			</ul>
 		</div>
 		`);
@@ -80,6 +84,7 @@ ForecastView.prototype.bindEvents = function () {
 
 // Initialization -- HTML Request --> feed data object to report
 function init() {
+	renderClock();
 	$.ajax({
 		url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=Nagasaki,392&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85",
 		success: function (results) {
@@ -114,14 +119,21 @@ function renderClock () {
 		currentMinutes = "0" + currentMinutes;
 	}
 
-	var builtClock = currentHours + ":" + currentMinutes + amString;
-	console.log(builtClock);
+	var builtClock = currentHours + ":" + currentMinutes + " " + amString;
+	
+	var clockEl = $(".clock");
+	clockEl.html(builtClock);
 }
 
 function windDirection(a) {
 	var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 	return directions[Math.round((a/45) % 8)];
 }
+
+
+
+
+
 
 init();
 setInterval(renderClock, 1000);
