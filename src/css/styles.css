@@ -48,15 +48,17 @@ li {
 .icon-block {
 	height: 7em;
 	width: 7em;
-	padding: 1em;
+	/*padding: 1em;*/
 	border-right: 1px solid #b7b7b7;
 	margin: 0;
 	display: inline-block;
+	float: left;
 }
 
 .info-block {
 	display: inline-block;
-	float: right;
+	float: left;
+	padding: 0 1em;
 }
 
 .icon {
