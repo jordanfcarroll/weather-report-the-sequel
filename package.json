@@ -1,0 +1,27 @@
+{
+  "name": "weather-report-the-sequel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cp node_modules/jquery/dist/jquery.js lib/ && cp node_modules/normalize.css/normalize.css lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanfcarroll/weather-report-the-sequel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanfcarroll/weather-report-the-sequel/issues"
+  },
+  "homepage": "https://github.com/jordanfcarroll/weather-report-the-sequel#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "normalize.css": "^5.0.0"
+  }
+}
