@@ -30,3 +30,7 @@ function windDirection(a) {
 	return directions[Math.round(a/45) % 8];
 }
 
+function getWeekday (x) {
+	var weekdays = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	return weekdays[x];
+}
