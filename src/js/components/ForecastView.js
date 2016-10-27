@@ -13,10 +13,12 @@
 		var description = this.data.weather[0].description;
 		var min = kToF(this.data.temp.min);
 		var max = kToF(this.data.temp.max);
+		console.log(this.data.deg);
 		var wind = {
 			speed: this.data.speed + "mph",
 			direction: windDirection(this.data.deg)
-		}
+		};
+		console.log(wind);
 
 		// Create and insert html string with data variables
 		$(this.element).html(`
