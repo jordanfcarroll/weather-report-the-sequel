@@ -38,7 +38,7 @@
 	/*display: inline-block;*/
 }
 
-.expanded.icon-block {
+.expanded .icon-block {
 	height: 7em;
 	width: 7em;
 	/*padding: 1em;*/
@@ -48,7 +48,7 @@
 	float: left;
 }
 
-.expanded.info-block {
+.expanded .info-block {
 	display: inline-block;
 	float: left;
 	padding: 0 1em;
@@ -57,47 +57,47 @@
 .icon {
 }
 
-.expanded.cloud-icon:before {
+.expanded .cloud-icon:before {
 	content: "\f0c2";
 	font-family: "FontAwesome";
 	font-size: 5em;
 }
 
-.expanded.clear-icon:before {
+.expanded .clear-icon:before {
 	content: "\f185";
 	font-family: "FontAwesome";
 	font-size: 5em;
 	padding-bottom: .2em;
 }
 
-.expanded.rain-icon:before {
+.expanded .rain-icon:before {
 	content: "\f0e9";
 	font-family: "FontAwesome";
 	font-size: 5em;
 }
 
-.expanded.day {
+.expanded .day {
 	display: block;
 	margin-top: .2em;
 }
 
-.expanded.hi,
-.expanded.lo {
+.expanded .hi,
+.expanded .lo {
 	display: inline-block;
 	font-size: 3em;
 	line-height: 1.5em;
 }
 
-.expanded.hi:after {
+.expanded .hi:after {
 	content: "/";
 }
 
-.expanded.lo:after {
+.expanded .lo:after {
 	content: "\00b0";
 }
 
-.expanded.desc,
-.expanded.wind {
+.expanded .desc,
+.expanded .wind {
 	font-size: 1.2em;
 }
 
