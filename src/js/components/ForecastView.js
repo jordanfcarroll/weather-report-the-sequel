@@ -10,9 +10,9 @@
 		// console.log(value);
 
 		// Get appropriate variables from the weather data object
-		var description = this.data.weather[0].description || null;
-		var min = kToF(this.data.temp.min) || null;
-		var max = kToF(this.data.temp.max) || null;
+		var description = this.data.weather[0].description;
+		var min = kToF(this.data.temp.min);
+		var max = kToF(this.data.temp.max);
 		var wind = {
 			speed: this.data.speed + "mph",
 			direction: windDirection(this.data.deg)
@@ -25,7 +25,7 @@
 					<div class="icon-block">
 						<li class="icon"></li>
 						<li class="day">${"Monday"}</li>
-						<button class="expand">+<button>
+						<button class="expand">+</button>
 					</div>
 					<div class="info-block">
 						<li class="desc">${description}</li>
