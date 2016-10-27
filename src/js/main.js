@@ -1,33 +1,3 @@
-// Outer View prototype
-function ReportView () {
-	View.apply(this, arguments);
-}
-ReportView.prototype = Object.create(View.prototype);
-ReportView.prototype.render = function () {
-	var _this = this;
-
-	// MAKE UL
-
-	this.data.list.forEach(function (value) {
-		var forecastView = new ForecastView(value, "div")
-		forecastView.render();
-
-
-		$(_this.element).append(forecastView.element);
-	})
-
-	$("body").append(this.element);
-	this.bindEvents();
-	console.log(this);
-}
-
-
-ReportView.prototype.bindEvents = function () {
-	console.log("Binding big events");
-}
-
-
-
 // Individual Forecast View prototype
 function ForecastView (	) {
 	View.apply(this, arguments);
@@ -84,7 +54,7 @@ function init() {
 }
 
 function buildApp (results) {
-	var report = new ReportView(results, "div");
+	var report = new AppView(results, "div");
 report.render();
 	$(document.body).append(report.element);
 }
