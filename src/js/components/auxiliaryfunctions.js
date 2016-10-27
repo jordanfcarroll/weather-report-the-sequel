@@ -29,8 +29,3 @@ function windDirection(a) {
 	var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 	return directions[Math.round(a/45) % 8];
 }
-
-function getWeekday (x) {
-	var weekdays = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-	return weekdays[x];
-}
