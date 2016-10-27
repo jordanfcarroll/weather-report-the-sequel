@@ -11,10 +11,11 @@
 
 		// Get appropriate variables from the weather data object
 		var desc = this.data.weather[0].description;
+		console.log(icon);
 
-		var icon = this.element.querySelector(".icon");
+		// setIcon(desc, icon);
 
-		setIcon(desc, icon);
+	
 
 		var min = kToF(this.data.temp.min);
 		var max = kToF(this.data.temp.max);
@@ -35,7 +36,7 @@
 						<button class="expand">+</button>
 					</div>
 					<div class="info-block">
-						<li class="desc">${description}</li>
+						<li class="desc">${desc}</li>
 						<li class="hi">${max}</li>
 						<li class="lo">${min}</li>
 						<li class="wind">${wind.speed} ${wind.direction}</li>
@@ -43,6 +44,19 @@
 				</ul>
 			</div>
 			`);
+
+		var icon = this.element.querySelector(".icon");
+
+		if (desc.indexOf("cloud") >= 0) {
+			console.log("clouds are here");
+			$(icon).addClass("cloud-icon");
+		} else if (desc.indexOf("rain") >= 0) {
+			console.log("rain is here");
+			$(icon).addClass("rain-icon");
+		} else if (desc.indexOf("clear") >= 0) {
+			console.log("sky is clear");
+			$(icon).addClass("clear-icon");
+		}
 
 		// Bind events to this ForecastView
 		this.bindEvents();
@@ -63,18 +77,18 @@
 		});
 	}
 
-	ForecastView.prototype.getIcon = function (desc, icon) {
-		if (description.indexOf("cloud") >= 0) {
-			console.log("clouds are here");
-			$(icon).addClass("cloud-icon");
-		} else if (description.indexOf("rain") >= 0) {
-			console.log("rain is here");
-			$(icon).addClass("rain-icon");
-		} else if (description.indexOf("clear") >= 0) {
-			console.log("rain is here");
-			$(icon).addClass("clear-icon");
-		}
-	}
+	// ForecastView.prototype.setIcon = function (desc, icon) {
+	// 	if (description.indexOf("cloud") >= 0) {
+	// 		console.log("clouds are here");
+	// 		$(icon).addClass("cloud-icon");
+	// 	} else if (description.indexOf("rain") >= 0) {
+	// 		console.log("rain is here");
+	// 		$(icon).addClass("rain-icon");
+	// 	} else if (description.indexOf("clear") >= 0) {
+	// 		console.log("rain is here");
+	// 		$(icon).addClass("clear-icon");
+	// 	}
+	// }
 
 	window.ForecastView = ForecastView;
 	
