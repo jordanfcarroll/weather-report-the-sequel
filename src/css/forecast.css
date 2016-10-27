@@ -80,9 +80,18 @@ li {
 	font-size: 5em;
 }
 
+/*.regular */.day {
+	font-size: 2.5em;
+	margin: .5em 0 .5em 2em;
+	display: inline-block;
+	/*float: */
+}
+
 .expanded .day {
 	display: block;
 	margin-top: .2em;
+	font-size: 1em;
+	margin: 0;
 }
 
 .expanded .hi,
