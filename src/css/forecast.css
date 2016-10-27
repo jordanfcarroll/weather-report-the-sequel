@@ -33,7 +33,7 @@
 	margin-top: .75em;
 }
 
-.expanded li {
+li {
 	list-style: none;
 	/*display: inline-block;*/
 }
@@ -46,6 +46,10 @@
 	margin: 0;
 	display: inline-block;
 	float: left;
+}
+
+.info-block {
+	display: none;
 }
 
 .expanded .info-block {
