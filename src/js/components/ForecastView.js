@@ -10,7 +10,12 @@
 		// console.log(value);
 
 		// Get appropriate variables from the weather data object
-		var description = this.data.weather[0].description;
+		var desc = this.data.weather[0].description;
+
+		var icon = this.element.querySelector(".icon");
+
+		setIcon(desc, icon);
+
 		var min = kToF(this.data.temp.min);
 		var max = kToF(this.data.temp.max);
 		console.log(this.data.deg);
@@ -58,6 +63,18 @@
 		});
 	}
 
+	ForecastView.prototype.getIcon = function (desc, icon) {
+		if (description.indexOf("cloud") >= 0) {
+			console.log("clouds are here");
+			$(icon).addClass("cloud-icon");
+		} else if (description.indexOf("rain") >= 0) {
+			console.log("rain is here");
+			$(icon).addClass("rain-icon");
+		} else if (description.indexOf("clear") >= 0) {
+			console.log("rain is here");
+			$(icon).addClass("clear-icon");
+		}
+	}
 
 	window.ForecastView = ForecastView;
 	

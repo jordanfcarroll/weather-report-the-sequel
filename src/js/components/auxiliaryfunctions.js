@@ -29,3 +29,4 @@ function windDirection(a) {
 	var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 	return directions[Math.round(a/45) % 8];
 }
+
