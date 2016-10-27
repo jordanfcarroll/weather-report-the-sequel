@@ -1,13 +1,3 @@
-// Base View prototype
-function View (data, tagName) {
-	this.data = data || null;
-	this.element = document.createElement(tagName);
-}
-View.prototype.render = function() {};
-View.prototype.bindEvents = function() {};
-
-
-
 // Outer View prototype
 function ReportView () {
 	View.apply(this, arguments);
@@ -95,7 +85,7 @@ function init() {
 
 function buildApp (results) {
 	var report = new ReportView(results, "div");
-	report.render();
+report.render();
 	$(document.body).append(report.element);
 }
 
