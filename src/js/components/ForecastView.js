@@ -32,7 +32,7 @@
 		// Create and insert html string with data variables
 		$(this.element).html(`
 			<div class="weather-item">
-				<ul class="block">
+				<ul class="block cf">
 					<div class="icon-block">
 						<li class="icon"></li>
 						<li class="day">${weekday}</li>

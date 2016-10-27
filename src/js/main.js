@@ -13,7 +13,7 @@ function init() {
 function buildApp (results) {
 	// Add city name to page
 	$("#city-name").html(results.city.name);
-
+	
 	// Generate and render the AppView
 	var report = new AppView(results, "div");
 	report.render();

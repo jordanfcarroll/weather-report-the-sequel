@@ -26,7 +26,7 @@
 
 
 	AppView.prototype.bindEvents = function () {
-		console.log("Binding big events");
+		
 	}
 
 	window.AppView = AppView;

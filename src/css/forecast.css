@@ -132,3 +132,9 @@ li {
 	float: right;
 	display: inline-block;
 }
+
+cf:after {
+	content: "";
+	clear: both;
+	display: table;
+}
