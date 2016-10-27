@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+	<script src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="../src/js/components/View.js"></script>
+	<script type="text/javascript" src="../src/js/components/auxiliaryfunctions.js"></script>
+	<script type="text/javascript" src="../src/js/components/AppView.js"></script>
+	<script type="text/javascript" src="../src/js/components/ForecastView.js"></script>
+	<script type="text/javascript" src="../src/js/main.js"></script>
+	<script type="text/javascript">
+
+	setTimeout(function() {		
+		var view = new ForecastView;
+		
+		view.render();
+
+		var expandButton = document.querySelector("button");
+
+
+		console.assert(view.element.hasClass("expanded") === false);
+		expandButton.trigger("click");
+		console.assert(view.element.hasClass("expanded") === true);
+		expandButton.trigger("click");
+		console.assert(view.element.hasClass("expanded") === false);
+		console.log("We made it");
+	}, 2000);
+
+	</script>
+</body>
+</html>

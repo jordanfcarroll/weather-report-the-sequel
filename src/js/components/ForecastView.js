@@ -4,17 +4,21 @@
 	function ForecastView (	) {
 		View.apply(this, arguments);
 	}
+
 	ForecastView.prototype = Object.create(View.prototype);
 	ForecastView.prototype.render = function (value) {
 		// console.log(value);
-		var description = this.data.weather[0].description;
-		var min = kToF(this.data.temp.min);
-		var max = kToF(this.data.temp.max);
+
+		// Get appropriate variables from the weather data object
+		var description = this.data.weather[0].description || null;
+		var min = kToF(this.data.temp.min) || null;
+		var max = kToF(this.data.temp.max) || null;
 		var wind = {
 			speed: this.data.speed + "mph",
 			direction: windDirection(this.data.deg)
 		}
 
+		// Create and insert html string with data variables
 		$(this.element).html(`
 			<div class="weather-item">
 				<ul class="block">
@@ -32,15 +36,29 @@
 				</ul>
 			</div>
 			`);
+
+		// Bind events to this ForecastView
 		this.bindEvents();
-		}
+	}
 
 
 	ForecastView.prototype.bindEvents = function () {
-		console.log("Binding small events");
+
+		var _this = this;
+
+		var expandButton = this.element.querySelector("button");
+
+		$(expandButton).on("click", function (e) {
+
+			// Toggle expanded class of element to expand information
+			$(_this.element).toggleClass("expanded");
+
+		});
 	}
 
+
 	window.ForecastView = ForecastView;
+	
 })()
 
 
