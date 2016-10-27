@@ -33,12 +33,12 @@
 	margin-top: .75em;
 }
 
-li {
+.expanded li {
 	list-style: none;
 	/*display: inline-block;*/
 }
 
-.icon-block {
+.expanded.icon-block {
 	height: 7em;
 	width: 7em;
 	/*padding: 1em;*/
@@ -48,7 +48,7 @@ li {
 	float: left;
 }
 
-.info-block {
+.expanded.info-block {
 	display: inline-block;
 	float: left;
 	padding: 0 1em;
@@ -57,48 +57,61 @@ li {
 .icon {
 }
 
-.cloud-icon:before {
+.expanded.cloud-icon:before {
 	content: "\f0c2";
 	font-family: "FontAwesome";
 	font-size: 5em;
 }
 
-.clear-icon:before {
+.expanded.clear-icon:before {
 	content: "\f185";
 	font-family: "FontAwesome";
 	font-size: 5em;
+	padding-bottom: .2em;
 }
 
-.rain-icon:before {
+.expanded.rain-icon:before {
 	content: "\f0e9";
 	font-family: "FontAwesome";
 	font-size: 5em;
 }
 
-.day {
+.expanded.day {
 	display: block;
+	margin-top: .2em;
 }
 
-.hi,
-.lo {
+.expanded.hi,
+.expanded.lo {
 	display: inline-block;
 	font-size: 3em;
 	line-height: 1.5em;
 }
 
-.hi:after {
+.expanded.hi:after {
 	content: "/";
 }
 
-.lo:after {
+.expanded.lo:after {
 	content: "\00b0";
 }
 
-.desc,
-.wind {
+.expanded.desc,
+.expanded.wind {
 	font-size: 1.2em;
 }
 
 /*.desc {
 	margin-top: 1em;
 }*/
+
+.expand {
+	border: none;
+	font-family: Helvetica;
+	font-size: 4em;
+	font-weight: bold;
+	color: #b7b7b7;
+	background-color: #fff;
+	float: right;
+	display: inline-block;
+}
