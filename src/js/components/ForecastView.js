@@ -72,10 +72,20 @@
 
 		$(expandButton).on("click", function (e) {
 
+			e.stopPropagation();
 			// Toggle expanded class of element to expand information
-			$(_this.element).toggleClass("expanded");
+			$(_this.element).addClass("expanded");
+			$(expandButton).html("");
 
 		});
+
+		$(this.element).on("click", function (e) {
+
+			if ($(_this.element).hasClass("expanded")) {
+				$(_this.element).removeClass("expanded");
+				$(expandButton).html("+");
+			}
+		})
 	}
 
 	window.ForecastView = ForecastView;
