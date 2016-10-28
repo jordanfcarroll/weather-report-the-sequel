@@ -4,9 +4,11 @@
 	}
 	AppView.prototype = Object.create(View.prototype);
 	AppView.prototype.render = function () {
+		$(".app").empty();
+		$(this.element).addClass("app");
+
+
 		var _this = this;
-
-
 		// Create and render ForecastView for each day data element in the appview's data
 		this.data.list.forEach(function (value) {
 			var forecastView = new ForecastView(value, "div")

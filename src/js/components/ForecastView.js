@@ -25,26 +25,26 @@
 		
 		// Get wind info
 		var wind = {
-			speed: this.data.speed + "mph",
+			speed: Math.round(this.data.speed) + " mph",
 			direction: windDirection(this.data.deg)
 		};
 
 		// Create and insert html string with data variables
 		$(this.element).html(`
 			<div class="weather-item">
-				<ul class="block cf">
+				<div class="block cf">
 					<div class="icon-block">
-						<li class="icon"></li>
-						<li class="day">${weekday}</li>
+						<div class="icon"></div>
+						<div class="day">${weekday}</div>
 					</div>
 					<div class="info-block">
-						<li class="desc">${desc}</li>
-						<li class="hi">${max}</li>
-						<li class="lo">${min}</li>
-						<li class="wind">${wind.speed} ${wind.direction}</li>
+						<div class="desc">${desc}</div>
+						<div class="hi">${max}</div>
+						<div class="lo">${min}</div>
+						<div class="wind">${wind.speed} ${wind.direction}</div>
 					</div>
 					<button class="expand">+</button>
-				</ul>
+				</div>
 			</div>
 			`);
 

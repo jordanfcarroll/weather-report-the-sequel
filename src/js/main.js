@@ -1,7 +1,6 @@
 function init() {
-
 	renderClock();
-	// execute http request to pull data
+
 	$.ajax({
 		url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=Nagasaki,392&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85",
 		success: function (results) {
@@ -24,6 +23,12 @@ function buildApp (results) {
 
 
 init();
+
+$(".search").keydown(function (e) {
+	if (e.which === 13) {
+		search($(this).val());
+	}
+})
 setInterval(renderClock, 1000);
 
 

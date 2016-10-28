@@ -25,6 +25,16 @@ function renderClock () {
 	clockEl.html(builtClock);
 }
 
+function search (city) {
+	var updatedUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85";
+	$.ajax({
+			url : updatedUrl,
+			success : function(results) {
+				buildApp(results);
+			}
+		})
+}
+
 function windDirection(a) {
 	var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 	return directions[Math.round(a/45) % 8];

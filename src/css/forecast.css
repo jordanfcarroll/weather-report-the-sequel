@@ -138,3 +138,7 @@ cf:after {
 	clear: both;
 	display: table;
 }
+
+button {
+	outline: none;
+}
