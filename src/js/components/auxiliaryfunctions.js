@@ -25,6 +25,24 @@ function renderClock () {
 	clockEl.html(builtClock);
 }
 
+function renderLoading() {
+	var div = document.createElement("div");
+	// $(div).html("LOADING");
+	$(div).html(`
+		<div class="dot-1"></div>
+		<div class="dot-2"></div>
+		`);
+	$(div).addClass("loading");
+	$("body").append(div);
+}
+
+function removeLoading() {
+	$(".loading").remove();
+
+}
+
+
+
 function search (city) {
 	var updatedUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85";
 	$.ajax({

@@ -1,9 +1,10 @@
 function init() {
 	renderClock();
-
+	renderLoading();
 	$.ajax({
 		url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=Nagasaki,392&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85",
 		success: function (results) {
+			removeLoading();
 			buildApp(results);
 		}
 	})

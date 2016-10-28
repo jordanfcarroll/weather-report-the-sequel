@@ -22,7 +22,7 @@
 	/*width: 5em;
 	height: 2em;
 	margin: auto;*/
-	display: flex;
+	/*display: flex;*/
 }
 
 .block {
@@ -63,7 +63,28 @@ li {
 }
 
 .icon {
+	width: 2em;
+	margin: 0;
+	display: inline-block;
 }
+
+.cloud-icon:before {
+	content: "\f0c2";
+	font-family: "FontAwesome";
+	font-size: 4em;
+}
+.clear-icon:before {
+	content: "\f185";
+	font-family: "FontAwesome";
+	font-size: 4em;
+}
+.rain-icon:before {
+	content: "\f0e9";
+	font-family: "FontAwesome";
+	font-size: 4em;
+	padding-bottom: .2em;
+}
+
 
 .expanded .cloud-icon:before {
 	content: "\f0c2";
@@ -142,3 +163,31 @@ cf:after {
 button {
 	outline: none;
 }
+
+
+@media (min-width: 600px) {
+	.app {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.weather-item {
+		width: 360px;
+		/*flex-basis: auto;*/
+		height: 600px;
+		border: 1px solid #aaa;
+		padding: 10px;
+		margin: 10px;
+		flex-grow: 1;
+	}
+	.expand {
+		display: none;
+	}
+
+	.icon-block {
+		height: 200px;
+	}
+
+	.info-block {
+		font-size: 2em;
+		display: block;
+	}
