@@ -1,5 +1,9 @@
 .clock {
-	float: right;
+    font-weight: bold;
+    font-size: 3em;
+    margin-top: -0.2em;
+    margin-bottom: 13vh;
+    font-style: italic;
 }
 
 .container {
@@ -17,7 +21,7 @@
 	margin: 0;
 	width: 20px;
 	height: 20px;
-	background-color: red;
+	background-color: #fff;
 	font-size: 10px;
 	border-radius: 10px;
 	animation-name: loadingA;
@@ -30,7 +34,7 @@
 	margin: 0;
 	width: 20px;
 	height: 20px;
-	background-color: blue;
+	background-color: #fff;
 	font-size: 10px;
 	border-radius: 10px;
 	animation-name: loadingB;

@@ -182,7 +182,7 @@ button {
 		      rgba(255, 0, 0, 0.45)
 		    ),
 		    url("../../assets/bkgrd_img.jpeg");
-		background-size: cover;
+		background-size: contain;
 		background-repeat: no-repeat;
 	}
 	.app {
@@ -191,9 +191,9 @@ button {
 	}
 	h3 {
 		font-size: 3.75em;
-		margin: 1vh 0 10vh 0;
+		margin: 1vh 0 0 0;
 	}
-	.weather-item .visible {
+	.weather-item /*.visible*/ {
 		width: 260px;
 		/*flex-basis: auto;*/
 		height: 400px;
@@ -213,14 +213,14 @@ button {
 		height: 100px;
 	}
 	.cloud-icon:before {
-		font-size: 4em;
+		font-size: 6em;
 		padding-left: .1em;
 	}
 	.clear-icon:before {
-		font-size: 4em;
+		font-size: 6em;
 	}
 	.rain-icon:before {
-		font-size: 4em;
+		font-size: 6em;
 	}
 	.day {
 		display: block;
