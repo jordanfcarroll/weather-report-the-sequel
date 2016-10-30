@@ -175,9 +175,17 @@ button {
 /*-------MEDIA-QUERIES-------*/
 
 @media (min-width: 600px) {
+	body {
+		background-image: url("../../assets/bkgrd_image.jpeg");
+
+	}
 	.app {
 		display: flex;
 		flex-wrap: wrap;
+	}
+	h3 {
+		font-size: 3.75em;
+		margin: 1vh 0 10vh 0;
 	}
 	.weather-item {
 		width: 260px;
