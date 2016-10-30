@@ -34,10 +34,10 @@
 	padding: 0;
 }
 
-li {
+/*li {
 	list-style: none;
-	/*display: inline-block;*/
-}
+	display: inline-block;
+}*/
 
 .icon-block {
 	display: inline-block;
@@ -191,3 +191,4 @@ button {
 		font-size: 2em;
 		display: block;
 	}
+
