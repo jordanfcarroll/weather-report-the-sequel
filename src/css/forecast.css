@@ -257,3 +257,7 @@ button {
 	.lo:after {
 		content: "\00b0";
 	}
+
+	.hidden {
+		display: none;
+	}

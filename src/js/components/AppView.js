@@ -24,7 +24,7 @@
 				setView.render();
 
 				if (!isFirst) {
-					setView.element.addClass("hidden");
+					$(setView.element).addClass("hidden");
 				}
 
 				$(_this.element).append(setView.element);
@@ -43,7 +43,6 @@
 
 		// Bind events to the appview
 		this.bindEvents();
-		console.log(this);
 	}
 
 
