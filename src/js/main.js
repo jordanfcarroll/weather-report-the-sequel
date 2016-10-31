@@ -1,6 +1,7 @@
 // TODO 
 //   1. Clean up AppView Setview loop
 //   2. Alter clock to correct local time.
+//   3. Integrate aux functions into AppView
 
 
 
