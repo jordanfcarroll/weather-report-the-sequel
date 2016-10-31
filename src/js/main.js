@@ -1,19 +1,27 @@
 // TODO 
 //   1. Clean up AppView Setview loop
-//   2. Alter clock to correct local time.
+//   2. Consolidate Timezone ajax call into a function (intervalId should not be global)
 //   3. Integrate aux functions into AppView
 
 
-
 function init() {
-	renderClock();
 	renderLoading();
 	$.ajax({
 		url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=Nagasaki,392&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85",
 		success: function (results) {
-			console.log(results);
-			removeLoading();
-			buildApp(results);
+			var _results = results;
+			var long = results.city.coord.lon;
+			var lat = results.city.coord.lat;
+			$.ajax({
+				url : `http://api.timezonedb.com/v2/get-time-zone?key=FZZNAIMR77WX&format=json&by=position&lng=${long}&lat=${lat}`,
+				success : function (results) {
+					console.log(results);
+					renderClock(results.timestamp);
+					intervalId = setInterval(renderClock.bind(null, results.timestamp), 1000);
+					buildApp(_results);
+					removeLoading();
+				}
+			})
 		}
 	})
 }
@@ -30,7 +38,7 @@ function buildApp (results) {
 	$(document.body).append(report.element);
 }
 
-
+var intervalId;
 init();
 
 $(".search").keydown(function (e) {
@@ -38,7 +46,7 @@ $(".search").keydown(function (e) {
 		search($(this).val());
 	}
 })
-setInterval(renderClock, 1000);
+
 
 
 
