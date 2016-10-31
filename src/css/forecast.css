@@ -279,13 +279,15 @@ button {
 	.lo:after {
 		content: "\00b0";
 	}
-	.hidden {
-		display: none;
-	}
+
 	.arrow {
 		display: block;
 	}
-	#arrow-wrapper {
+	.hidden {
+		display: none;
+	}
+
+	.arrow-wrapper {
 		display: inline-block;
 		margin-left: 1.5em;
 	}
