@@ -201,6 +201,9 @@ button {
 		width: 100vw;
 		margin: 0;
 	}
+	.day {
+		font-size: 1.75em;
+	}
 	.app {
 		
 	}
@@ -215,7 +218,7 @@ button {
 		display: inline-block;
 	}
 	.weather-item /*.visible*/ {
-		width: 20vw;
+		width: 19vw;
 		/*flex-basis: auto;*/
 		height: 60vh;
 		border-top: 2px solid #fff;
@@ -289,6 +292,7 @@ button {
 		position: absolute;
 		top: 0;
 		left: 0;
+		width: 90vw;
 	}
 	.app > .hidden {
 		/*display: none;*/
@@ -296,10 +300,12 @@ button {
 	}
 	.app {
 		position: relative;
+		width: 100%;
 	}
 	.arrow-wrapper {
-		margin-right: 4.5em;
+		margin-right: 1.45em;
 		float: right;
+		width: 6vw;
 	}
 	#forward-arrow {
 		margin-top: .8em; 
@@ -318,3 +324,9 @@ button {
 		font-size: 7em;
 		font-family: "FontAwesome";
 	}
+}
+@media (min-width: 1000px) {
+	.day {
+		font-size: 2.2em;
+	}
+}
