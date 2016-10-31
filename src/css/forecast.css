@@ -181,9 +181,9 @@ h3 {
 	display: none;
 }
 
-/*button {
+button {
 	outline: none;
-}*/
+}
 
 /*-------MEDIA-QUERIES-------*/
 
@@ -282,7 +282,7 @@ h3 {
 	.hidden {
 		display: none;
 	}
-	.arrows {
+	.arrow {
 		display: inline-block;
 	}
 	.fa {
