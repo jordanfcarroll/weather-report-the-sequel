@@ -57,3 +57,14 @@ function windDirection(a) {
 	var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 	return directions[Math.round(a/45) % 8];
 }
+
+function updateButtons(app) {
+	if (app.displayedSet === 1) {
+		$("#back-arrow").addClass("hidden");
+	} else if (app.displayedSet === 4) {
+		$("#forward-arrow").addClass("hidden");
+	} else {
+		$("#back-arrow").removeClass("hidden");
+		$("#forward-arrow").removeClass("hidden");
+	}
+}

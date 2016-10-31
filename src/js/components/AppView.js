@@ -1,6 +1,9 @@
 (function () {
 	function AppView () {
 		View.apply(this, arguments);
+
+		// Set initial 4-set to display in desktop view
+		this.displayedSet = 1;
 	}
 	AppView.prototype = Object.create(View.prototype);
 	AppView.prototype.render = function () {
@@ -21,6 +24,7 @@
 
 			if (i === 4) {
 				var setView = new SetView(set, "div");
+				$(setView.element).addClass("set");
 				setView.render();
 
 				if (!isFirst) {
@@ -35,7 +39,18 @@
 		})
 
 
-		// Create and render ForecastView for each day data element in the appview's data
+		// Create arrows for swapping between SetViews
+
+		var forwardArrow = document.createElement("button");
+		$(forwardArrow).addClass("arrow");
+		$(forwardArrow).attr("id","forward-arrow");
+		$(forwardArrow).html("\f105");
+		$(_this.element).append(forwardArrow);
+
+		var backArrow = document.createElement("button");
+		$(backArrow).addClass("arrow hidden");
+		$(backArrow).attr("id","back-arrow");
+		$(_this.element).prepend(backArrow);
 
 
 		// Append the appview to the document
@@ -47,7 +62,26 @@
 
 
 	AppView.prototype.bindEvents = function () {
-		
+		var _this = this;
+		$("#forward-arrow").click(function (e) {
+			var sets = _this.element.querySelectorAll(".set");
+			if (_this.displayedSet < 4) {
+				$(sets[_this.displayedSet - 1]).toggleClass("hidden");
+				_this.displayedSet++;
+				$(sets[_this.displayedSet - 1]).toggleClass("hidden");
+			}
+			updateButtons(_this);
+		})
+		$("#back-arrow").click(function (e) {
+			var sets = _this.element.querySelectorAll(".set");
+			if (_this.displayedSet > 1) {
+				$(sets[_this.displayedSet - 1]).toggleClass("hidden");
+				_this.displayedSet--;
+				$(sets[_this.displayedSet - 1]).toggleClass("hidden");
+			}
+			updateButtons(_this);
+		})
+
 	}
 
 	window.AppView = AppView;
