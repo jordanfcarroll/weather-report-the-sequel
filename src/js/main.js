@@ -9,6 +9,7 @@ function init() {
 	$.ajax({
 		url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=Nagasaki,392&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85",
 		success: function (results) {
+			var seconds = 0;	
 			var _results = results;
 			var long = results.city.coord.lon;
 			var lat = results.city.coord.lat;
@@ -40,6 +41,7 @@ function buildApp (results) {
 
 var intervalId;
 init();
+var seconds = 0;
 
 $(".search").keydown(function (e) {
 	if (e.which === 13) {

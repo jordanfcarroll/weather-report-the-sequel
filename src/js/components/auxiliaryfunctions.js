@@ -26,8 +26,9 @@ function kToF (a) {
 // }
 
 function renderClock (unix) {
+
 	// convert unix to ms
-	var unix = unix * 1000;
+	var unix = (unix + seconds)* 1000;
 
 	// Get a date object
 	var date = new Date(unix);
@@ -56,6 +57,8 @@ function renderClock (unix) {
 	
 	var clockEl = $(".clock");
 	clockEl.html(builtClock);
+	console.log(date);
+	seconds++;
 }
 
 
@@ -80,6 +83,7 @@ function removeLoading() {
 function search (city) {
 	var updatedUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&mode=json&cnt=16&APPID=f6e829e9fecf2ba3637d0eed96a2ce85";
 	renderLoading();
+	var seconds = 0;
 	$.ajax({
 		url : updatedUrl,
 		success : function(results) {
