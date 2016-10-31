@@ -257,7 +257,10 @@ button {
 	.lo:after {
 		content: "\00b0";
 	}
-
 	.hidden {
 		display: none;
+	}
+	.arrow:before {
+		font-family: "FontAwesome";
+		content: "\f105";
 	}
