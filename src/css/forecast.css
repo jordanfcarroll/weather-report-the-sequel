@@ -283,7 +283,14 @@ button {
 		display: none;
 	}
 	.arrow {
+		display: block;
+	}
+	#arrow-wrapper {
 		display: inline-block;
+		margin-left: 1.5em;
+	}
+	#forward-arrow {
+		margin-top: .8em;
 	}
 	.fa {
 		background-color: transparent;
