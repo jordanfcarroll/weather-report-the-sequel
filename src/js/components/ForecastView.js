@@ -6,8 +6,7 @@
 	}
 
 	ForecastView.prototype = Object.create(View.prototype);
-	ForecastView.prototype.render = function (value) {
-		// console.log(value);
+	ForecastView.prototype.render = function () {
 
 		// Get appropriate variables from the weather data object
 		var desc = this.data.weather[0].description;
