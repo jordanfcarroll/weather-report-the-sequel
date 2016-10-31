@@ -167,15 +167,15 @@ h3 {
 	display: inline-block;
 }
 
-cf:after {
+.cf:after {
 	content: "";
 	clear: both;
 	display: table;
 }
 
-/*.fa {
+.arrows {
 	display: none;
-}*/
+}
 
 /*button {
 	outline: none;
@@ -183,7 +183,7 @@ cf:after {
 
 /*-------MEDIA-QUERIES-------*/
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
 	body {
 		background: 
 			linear-gradient(
@@ -203,6 +203,9 @@ cf:after {
 	h3 {
 		font-size: 3.75em;
 		margin: 1vh 0 0 0;
+	}
+	.cf {
+		width: inherit;
 	}
 	.set {
 		display: inherit;
@@ -273,6 +276,9 @@ cf:after {
 	}
 	.hidden {
 		display: none;
+	}
+	.arrows {
+		display: inline-block;
 	}
 	.fa {
 		background-color: transparent;
