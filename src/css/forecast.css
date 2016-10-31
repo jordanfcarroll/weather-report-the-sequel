@@ -202,8 +202,7 @@ button {
 		margin: 0;
 	}
 	.app {
-		display: flex;
-		flex-wrap: wrap;
+		
 	}
 	h3 {
 		font-size: 3.75em;
@@ -212,8 +211,8 @@ button {
 	.cf {
 		width: inherit;
 	}
-	.set {
-		display: inherit;
+	.set > div {
+		display: inline-block;
 	}
 	.weather-item /*.visible*/ {
 		width: 20vw;
@@ -223,7 +222,6 @@ button {
 		border-bottom: 2px solid #fff;
 		padding: 10px;
 		margin: 10px;
-		flex-grow: 1;
 	}
 	.block {
 		border-bottom: none;
@@ -282,12 +280,26 @@ button {
 	.arrow {
 		display: block;
 	}
-	.hidden {
-		display: none;
+	button.hidden {
+		visibility: hidden;
+	}
+	.app > .set {
+		transition: opacity 800ms linear;
+		opacity: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.app > .hidden {
+		/*display: none;*/
+		opacity: 0;
+	}
+	.app {
+		position: relative;
 	}
 	.arrow-wrapper {
-		display: inline-block;
-		margin-left: 1.5em;
+		margin-right: 4.5em;
+		float: right;
 	}
 	#forward-arrow {
 		margin-top: .8em; 
