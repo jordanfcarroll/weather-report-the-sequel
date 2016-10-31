@@ -49,7 +49,7 @@
 		var backArrow = document.createElement("button");
 		$(backArrow).addClass("arrow hidden fa fa-angle-left");
 		$(backArrow).attr("id","back-arrow");
-		$(_this.element).prepend(backArrow);
+		$(_this.element).append(backArrow);
 
 
 		// Append the appview to the document
