@@ -41,15 +41,23 @@
 
 		// Create arrows for swapping between SetViews
 
-		var forwardArrow = document.createElement("button");
-		$(forwardArrow).addClass("arrow fa fa-angle-right");
-		$(forwardArrow).attr("id","forward-arrow");
-		$(_this.element).append(forwardArrow);
+		$(this.element).html(`
+			${$(this.element).html()}
+			<div id="arrow-wrapper">
+				<button class="arrow fa fa-angle-right" id="forward-arrow"></button>
+				<button class="arrow hidden fa fa-angle-left" id="back-arrow"></button>
+			</div>
+			`)
 
-		var backArrow = document.createElement("button");
-		$(backArrow).addClass("arrow hidden fa fa-angle-left");
-		$(backArrow).attr("id","back-arrow");
-		$(_this.element).append(backArrow);
+		// var forwardArrow = document.createElement("button");
+		// $(forwardArrow).addClass("arrow fa fa-angle-right");
+		// $(forwardArrow).attr("id","forward-arrow");
+		// $(_this.element).append(forwardArrow);
+
+		// var backArrow = document.createElement("button");
+		// $(backArrow).addClass("arrow hidden fa fa-angle-left");
+		// $(backArrow).attr("id","back-arrow");
+		// $(_this.element).append(backArrow);
 
 
 		// Append the appview to the document
