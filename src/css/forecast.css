@@ -279,20 +279,23 @@ button {
 	.lo:after {
 		content: "\00b0";
 	}
-
 	.arrow {
 		display: block;
 	}
 	.hidden {
 		display: none;
 	}
-
 	.arrow-wrapper {
 		display: inline-block;
 		margin-left: 1.5em;
 	}
 	#forward-arrow {
-		margin-top: .8em;
+		margin-top: .8em; 
+		position: absolute;
+	}
+	#back-arrow {
+		top: 200px;
+		position: relative;
 	}
 	.fa {
 		background-color: transparent;
