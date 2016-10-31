@@ -9,14 +9,34 @@
 
 
 		var _this = this;
-		// Create and render ForecastView for each day data element in the appview's data
-		this.data.list.forEach(function (value) {
-			var forecastView = new ForecastView(value, "div")
-			forecastView.render();
 
-			// Append new ForecastView to the AppView
-			$(_this.element).append(forecastView.element);
+		// Create and render each SetView containing set of four ForecastViews
+		var i = 0;
+		var set = [];
+		var isFirst = true;
+		this.data.list.forEach(function (value) {
+			set.push(value);
+			i++;
+
+
+			if (i === 4) {
+				var setView = new SetView(set, "div");
+				setView.render();
+
+				if (!isFirst) {
+					setView.element.addClass("hidden");
+				}
+
+				$(_this.element).append(setView.element);
+				isFirst = false;
+				i = 0;
+				set = [];
+			}
 		})
+
+
+		// Create and render ForecastView for each day data element in the appview's data
+
 
 		// Append the appview to the document
 		$("body").append(this.element);

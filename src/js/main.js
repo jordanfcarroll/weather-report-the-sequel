@@ -1,3 +1,8 @@
+// TODO 
+//   1. Clean up AppView Setview loop
+
+
+
 function init() {
 	renderClock();
 	renderLoading();
