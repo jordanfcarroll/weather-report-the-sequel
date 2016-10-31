@@ -42,13 +42,12 @@
 		// Create arrows for swapping between SetViews
 
 		var forwardArrow = document.createElement("button");
-		$(forwardArrow).addClass("arrow");
+		$(forwardArrow).addClass("arrow fa fa-angle-right");
 		$(forwardArrow).attr("id","forward-arrow");
-		$(forwardArrow).html("\f105");
 		$(_this.element).append(forwardArrow);
 
 		var backArrow = document.createElement("button");
-		$(backArrow).addClass("arrow hidden");
+		$(backArrow).addClass("arrow hidden fa fa-angle-left");
 		$(backArrow).attr("id","back-arrow");
 		$(_this.element).prepend(backArrow);
 
