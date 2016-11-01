@@ -14,10 +14,11 @@
 
 			// Append new ForecastView to the SetView
 			$(_this.element).append(forecastView.element);
+
 		})
 
 	}
-	SetView.prototype.bindEvents = function () {}
+	SetView.prototype.bindEvents = function () {};
 
 
 	window.SetView = SetView;

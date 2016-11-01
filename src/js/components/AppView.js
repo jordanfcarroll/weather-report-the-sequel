@@ -10,44 +10,72 @@
 		$(".app").empty();
 		$(this.element).addClass("app");
 
-
 		var _this = this;
-
 		// Create and render each SetView containing set of four ForecastViews
-		var i = 0;
-		var set = [];
+
 		var isFirst = true;
-		this.data.list.forEach(function (value) {
-			set.push(value);
-			i++;
-
-
-			if (i === 4) {
-				var setView = new SetView(set, "div");
-				$(setView.element).addClass("set");
-				setView.render();
-
-				if (!isFirst) {
-					$(setView.element).addClass("hidden");
-				}
-
-				$(_this.element).append(setView.element);
-				isFirst = false;
-				i = 0;
-				set = [];
+		for (var i = 0 ; i < this.data.list.length ;  ) {
+			var set = [];
+			for (var j = 0 ; j < 4 ; j++, i++ ) {
+				set.push(_this.data.list[i]);
 			}
-		})
+			var setView = new SetView(set, "div");
+			$(setView.element).addClass("set");
+			setView.render();	
+
+			if (!isFirst) {
+				$(setView.element).addClass("hidden");
+			}
+
+			$(_this.element).append(setView.element);
+			isFirst = false;
+		}
+
+		// var i = 0;
+		// var set = [];
+		// var isFirst = true;
+		// this.data.list.forEach(function (value) {
+		// 	set.push(value);
+		// 	i++;
+
+
+		// 	if (i === 4) {
+		// 		var setView = new SetView(set, "div");
+		// 		$(setView.element).addClass("set");
+		// 		setView.render();
+
+		// 		if (!isFirst) {
+		// 			$(setView.element).addClass("hidden");
+		// 		}
+
+		// 		$(_this.element).append(setView.element);
+		// 		isFirst = false;
+		// 		i = 0;
+		// 		set = [];
+		// 	}
+		// })
 
 
 		// Create arrows for swapping between SetViews
 
-		$(	this.element).html(`
-			${$(this.element).html()}
+		var arrowWrapper = document.createElement("div");
+		$(arrowWrapper).addClass("arrow-wrapper");
+		$(arrowWrapper).html(`
 			<div class="arrow-wrapper">
 				<button class="arrow fa fa-angle-right" id="forward-arrow"></button>
 				<button class="arrow hidden fa fa-angle-left" id="back-arrow"></button>
 			</div>
-			`)
+			`);
+
+		this.element.append(arrowWrapper)
+
+		// $(this.element).html(`
+		// 	${$(this.element).html()}
+		// 	<div class="arrow-wrapper">
+		// 		<button class="arrow fa fa-angle-right" id="forward-arrow"></button>
+		// 		<button class="arrow hidden fa fa-angle-left" id="back-arrow"></button>
+		// 	</div>
+		// 	`)
 
 		// Append the appview to the document
 		$("body").append(this.element);
