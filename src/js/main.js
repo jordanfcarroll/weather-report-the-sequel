@@ -1,7 +1,6 @@
 // TODO 
 //   2. Consolidate Timezone ajax call into a function (intervalId should not be global)
 //   3. Integrate aux functions into AppView
-//   4. Get current location?
 //   5. Add date to timestamp
 
 function callData (city) {
@@ -40,10 +39,12 @@ function buildApp (results) {
 	// Add city name to page
 	// animateIn(cityname);
 	$("#city-name").val(results.city.name);
+	$("#city-name").addClass("animate-in");
 	
 	// Generate and render the AppView
 	var report = new AppView(results, "div");
 	report.render();
+	// animateIn(report.element);
 
 	// Append the AppView to the body
 	$(document.body).append(report.element);

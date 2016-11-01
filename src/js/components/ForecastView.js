@@ -55,6 +55,8 @@
 			$(icon).addClass("rain-icon");
 		} else if (desc.indexOf("clear") >= 0) {
 			$(icon).addClass("clear-icon");
+		} else if (desc.indexOf("snow") >= 0 ) {
+			$(icon).addClass("snow-icon");
 		}
 
 

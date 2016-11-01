@@ -93,6 +93,12 @@ h3 {
 	font-size: 4em;
 	padding-bottom: .2em;
 }
+.snow-icon:before {
+	content: "\f2dc";
+	font-family: "FontAwesome";
+	font-size: 6em;
+	padding-bottom: .2em;
+}
 
 /*-----EXPANDED-STATE-STYLES------*/
 

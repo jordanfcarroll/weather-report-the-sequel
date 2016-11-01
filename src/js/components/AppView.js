@@ -61,7 +61,7 @@
 				_this.displayedSet++;
 				$(sets[_this.displayedSet - 1]).toggleClass("hidden");
 			}
-			updateButtons(_this);
+			_this.updateButtons();
 		})
 		$("#back-arrow").click(function (e) {
 			var sets = _this.element.querySelectorAll(".set");
@@ -70,10 +70,21 @@
 				_this.displayedSet--;
 				$(sets[_this.displayedSet - 1]).toggleClass("hidden");
 			}
-			updateButtons(_this);
+			_this.updateButtons();
 		})
 
 	}
+
+	AppView.prototype.updateButtons = function () {
+		if (this.displayedSet === 1) {
+			$("#back-arrow").addClass("hidden");
+		} else if (this.displayedSet === 4) {
+			$("#forward-arrow").addClass("hidden");
+		} else {
+			$("#back-arrow").removeClass("hidden");
+			$("#forward-arrow").removeClass("hidden");
+		}
+	}	
 
 	window.AppView = AppView;
 })()
