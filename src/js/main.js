@@ -1,5 +1,4 @@
 // TODO 
-//   1. Clean up AppView Setview loop
 //   2. Consolidate Timezone ajax call into a function (intervalId should not be global)
 //   3. Integrate aux functions into AppView
 //   4. Get current location?
@@ -40,7 +39,7 @@ function init() {
 function buildApp (results) {
 	// Add city name to page
 	// animateIn(cityname);
-	$("#city-name").html(results.city.name);
+	$("#city-name").val(results.city.name);
 	
 	// Generate and render the AppView
 	var report = new AppView(results, "div");

@@ -185,6 +185,15 @@ button {
 	outline: none;
 }
 
+#city-name {
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 3.5em;
+	color: white;
+	font-weight: bold;
+}
+
 /*-------MEDIA-QUERIES-------*/
 
 @media (min-width: 700px) {
