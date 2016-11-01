@@ -96,7 +96,7 @@ h3 {
 .snow-icon:before {
 	content: "\f2dc";
 	font-family: "FontAwesome";
-	font-size: 6em;
+	font-size: 4em;
 	padding-bottom: .2em;
 }
 
@@ -114,6 +114,13 @@ h3 {
 
 .expanded .clear-icon:before {
 	content: "\f185";
+	font-family: "FontAwesome";
+	font-size: 5em;
+	padding-bottom: .2em;
+}
+
+.expanded .snow-icon:before {
+	content: "\f2dc";
 	font-family: "FontAwesome";
 	font-size: 5em;
 	padding-bottom: .2em;
@@ -175,6 +182,7 @@ h3 {
 	background-color: transparent;
 	float: right;
 	display: inline-block;
+	cursor: pointer;
 }
 
 .cf:after {
@@ -261,6 +269,9 @@ button {
 	.rain-icon:before {
 		font-size: 6em;
 	}
+	.snow-icon:before {
+		font-size: 6em;
+	}
 	.day {
 		display: block;
 		margin: .2em 0 0 0;
@@ -326,10 +337,12 @@ button {
 	#forward-arrow {
 		margin-top: .8em; 
 		position: absolute;
+		cursor: pointer;
 	}
 	#back-arrow {
 		top: 200px;
 		position: relative;
+		cursor: pointer;
 	}
 	.fa {
 		background-color: transparent;

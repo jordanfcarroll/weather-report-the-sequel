@@ -39,12 +39,12 @@ function buildApp (results) {
 	// Add city name to page
 	// animateIn(cityname);
 	$("#city-name").val(results.city.name);
-	$("#city-name").addClass("animate-in");
+	// $("#city-name").addClass("animate-in");
 	
 	// Generate and render the AppView
 	var report = new AppView(results, "div");
 	report.render();
-	// animateIn(report.element);
+	animateIn(report.element.querySelector(".set"));
 
 	// Append the AppView to the body
 	$(document.body).append(report.element);
@@ -56,7 +56,6 @@ init();
 $(".search").keydown(function (e) {
 	if (e.which === 13) {
 		callData($(this).val());
-		this.value = "";
 		clearInterval(intervalId);
 	}
 })

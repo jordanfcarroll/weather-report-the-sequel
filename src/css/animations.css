@@ -55,9 +55,11 @@
 	animation-timing-function: ease;
 }
 
-@keyframes animate-in {
+@media (min-width: 700px) {
+	@keyframes animate-in {
 	0% {transform: translate(200px, 0);
 		opacity: 0;}
 	100% {transform: translate(0);
 		opacity: 1}
+}
 }
