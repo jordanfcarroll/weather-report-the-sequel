@@ -36,6 +36,9 @@
 		if (currentHours > 12) {
 			currentHours -= 12;
 		}	
+		if (currentHours === 0) {
+			currentHours = 12;
+		}
 		if (currentMinutes < 10) {
 			currentMinutes = "0" + currentMinutes;
 		}

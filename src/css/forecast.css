@@ -207,7 +207,30 @@ button {
 	color: white;
 	font-weight: bold;
 	margin-top: 20px;
+
 }
+
+#search-icon {
+	float: left;
+	content: "\f002";
+	font-family: "FontAwesome";
+}
+
+.search-wrapper { 
+	position: relative; 
+}
+.search-wrapper input { 
+	/*text-indent: 30px;*/
+	/*width: 260px;*/
+}
+.search-wrapper .fa-search { 
+  position: absolute;
+  top: 43px;
+  left: 290px;
+  font-size: 2em;
+  opacity: .5;
+}
+
 
 /*-------MEDIA-QUERIES-------*/
 
