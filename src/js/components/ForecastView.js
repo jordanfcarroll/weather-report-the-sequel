@@ -8,8 +8,10 @@
 	ForecastView.prototype = Object.create(View.prototype);
 	ForecastView.prototype.render = function () {
 
+
 		// Get appropriate variables from the weather data object
 		var desc = this.data.weather[0].description;
+
 
 		// Get weekday of date
 		var date = new Date(this.data.dt * 1000);
@@ -22,6 +24,7 @@
 		var min = kToF(this.data.temp.min);
 		var max = kToF(this.data.temp.max);
 		
+
 		// Get wind info
 		var wind = {
 			speed: Math.round(this.data.speed) + " mph",
@@ -74,6 +77,7 @@
 		$(expandButton).on("click", function (e) {
 
 			e.stopPropagation();
+
 			// Toggle expanded class of element to expand information
 			$(_this.element).addClass("expanded");
 			$(expandButton).html("");
